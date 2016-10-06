@@ -159,11 +159,6 @@ for ($year=2016 ; $year>=1970 ; $year--) {
     </form>
         
     </div>
-        <!--
-    <div class="rightcol">
-        <img src="/inc/book.png" alt="book logo" class="book">
-    </div>
--->
     <?php
 	if(isset($_SESSION['user'])) {
         include '../inc/db.inc'; 
@@ -186,9 +181,6 @@ for ($year=2016 ; $year>=1970 ; $year--) {
         }
     }
     ?>
-
     </div>
-
 </body>
-
 </html>
