@@ -1,10 +1,9 @@
 <?php
-  session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Takoda Register</title>
     <meta charset="utf-8" />
@@ -13,12 +12,9 @@
     <link rel="stylesheet" href="/css/customstyle.css">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-
 </head>
 
 <body>
-
-
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -37,34 +33,31 @@
                     <li class="active"><a href="">About Me</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-					<?php
-					    if(isset($_SESSION['user'])!="")
-                        {
-						  echo "<li><a href='../profile/mylistings.php'><span class='glyphicon glyphicon-user'></span> " . ucfirst($_SESSION['email_id']) . "</a></li>";
-                          echo "<li><a href='/login/logout.php'><span class='glyphicon glyphicon-log-out'></span>" . " Logout" . "</a></li>";
-                        }
-						else
-						{
-						  echo "<li><a href='/login/register.php'><span class='glyphicon glyphicon-user'></span> Sign Up</a></li>";
-                          echo "<li><a href='/login/login.php'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
-						}
-					?>
-                </ul>
+                    <?php
+if (isset($_SESSION['user']) != "") {
+    echo "<li><a href='../profile/mylistings.php'><span class='glyphicon glyphicon-user'></span> " . ucfirst($_SESSION['email_id']) . "</a></li>";
+    echo "<li><a href='/login/logout.php'><span class='glyphicon glyphicon-log-out'></span>" . " Logout" . "</a></li>";
+} else {
+    echo "<li><a href='/login/register.php'><span class='glyphicon glyphicon-user'></span> Sign Up</a></li>";
+    echo "<li><a href='/login/login.php'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
+}
+?>
+               </ul>
                 <div class="col-sm-3 col-md-3 pull-right">
                     <form method="post" action="../books/books.php" class="navbar-form" role="search">
                         <div class="input-group">
                             <div class="input-group-btn">
-					        <select name="srch-type" class="form-control">
+                            <select name="srch-type" class="form-control">
                             <option value="ISBN" selected>ISBN</option>
                             <option value="Course"> Course Used</option>
                             <option value="Title">Title</option>
                             <option value="Author">Author</option>
                             </select>
-							</div>
-							
+                            </div>
+
                             <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-							
-							<div class="input-group-btn">
+
+                            <div class="input-group-btn">
                             <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                             </div>
                         </div>
@@ -88,8 +81,6 @@
             <center>
                  <button><a href="/inc/Resume (Takoda Register).pdf"><img src="/inc/resume.png" class="patent"></a></button>
               </div>
-                </center>
-
+            </center>
 </body>
-
 </html>
